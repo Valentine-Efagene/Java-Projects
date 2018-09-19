@@ -147,11 +147,11 @@ public class NotepadSpeakFXMLController implements Initializable {
     
     @FXML
     private void save(ActionEvent event) {
-        file = getFile("Save");
-
+        if( file == null )
+            file = getSaveFile("Save");
         
         try (PrintWriter p = new PrintWriter(file.getPath())) {
-            
+            p.print(textArea.getText());
         } catch (FileNotFoundException ex) {
             Logger.getLogger(NotepadSpeakFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -159,9 +159,13 @@ public class NotepadSpeakFXMLController implements Initializable {
 
     @FXML
     private void saveAs(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open File");
-        file = fileChooser.showOpenDialog(textArea.getScene().getWindow());
+        file = getSaveFile( "Save As" );
+        
+        try (PrintWriter p = new PrintWriter(file.getPath())) {
+            p.print(textArea.getText());
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(NotepadSpeakFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public File getFile(String title) {
@@ -169,5 +173,21 @@ public class NotepadSpeakFXMLController implements Initializable {
         fileChooser.setTitle(title);
         File file = fileChooser.showOpenDialog(textArea.getScene().getWindow());
         return file;
+    }
+    
+    public File getSaveFile(String title) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle(title);
+        File file = fileChooser.showSaveDialog(textArea.getScene().getWindow());
+        return file;
+    }
+
+    @FXML
+    private void newFile(ActionEvent event) {
+        if (file != null) {
+            file = null;
+        }
+        
+        textArea.deleteText(0, textArea.getText().length());
     }
 }
