@@ -7,13 +7,17 @@ package notepadspeak;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -77,9 +81,7 @@ public class NotepadSpeakFXMLController implements Initializable {
 
     @FXML
     private void openFile(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open File");
-        file = fileChooser.showOpenDialog(textArea.getScene().getWindow());
+        file = getFile("Open");
         
         if (file == null) {
             return;
@@ -145,10 +147,27 @@ public class NotepadSpeakFXMLController implements Initializable {
     
     @FXML
     private void save(ActionEvent event) {
-        textArea.deleteText(0, textArea.getText().length());
+        file = getFile("Save");
+
+        
+        try (PrintWriter p = new PrintWriter(file.getPath())) {
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(NotepadSpeakFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void saveAs(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open File");
+        file = fileChooser.showOpenDialog(textArea.getScene().getWindow());
+    }
+    
+    public File getFile(String title) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle(title);
+        File file = fileChooser.showOpenDialog(textArea.getScene().getWindow());
+        return file;
     }
 }
