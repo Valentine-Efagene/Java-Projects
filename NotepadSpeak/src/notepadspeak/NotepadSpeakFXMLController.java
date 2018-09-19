@@ -91,7 +91,7 @@ public class NotepadSpeakFXMLController implements Initializable {
         fontChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                textArea.setFont();
+                //textArea.setFont();
             }
             
         });
