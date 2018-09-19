@@ -107,4 +107,19 @@ public class NotepadSpeakFXMLController implements Initializable {
     private void speak(ActionEvent event) {
         speech.speak(textArea.getText());
     }
+
+    @FXML
+    private void about(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("About");
+        alert.setContentText("This is an app to hide files and folders.\n"
+                + "Creator: Valentine Edesiri Efagene (VEE).\n"
+                + "For inquiries and suggestions, you may contact me via\n"
+                + "email: efagenevalentine@gmail.com\n"
+                + "facebook: Valentine Efagene\n"
+                + "whatsapp: 07053229765\n\n");
+        
+        alert.show();
+    }
 }
