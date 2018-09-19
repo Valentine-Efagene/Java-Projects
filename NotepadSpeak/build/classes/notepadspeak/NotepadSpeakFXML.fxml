@@ -12,7 +12,7 @@
         <menus>
           <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem fx:id="newMenuItem" mnemonicParsing="false" text="New" />
+                  <MenuItem fx:id="newMenuItem" mnemonicParsing="false" onAction="#newFile" text="New" />
                   <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#openFile" text="Open" />
                   <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#save" text="Save" />
                   <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#saveAs" text="Save As" />
@@ -24,13 +24,16 @@
                   <MenuItem fx:id="copyMenuItem" mnemonicParsing="false" onAction="#copy" text="Copy" />
                   <MenuItem fx:id="cutMenuItem" mnemonicParsing="false" onAction="#cut" text="Cut" />
                   <MenuItem fx:id="pasteMenuItem" mnemonicParsing="false" onAction="#paste" text="Paste" />
-              <MenuItem fx:id="clearMenuItem" mnemonicParsing="false" onAction="#clear" text="Delete" />
+              <MenuItem fx:id="clearMenuItem" mnemonicParsing="false" onAction="#clear" text="Clear" />
             </items>
           </Menu>
             <Menu fx:id="formatMenu" mnemonicParsing="false" text="Format">
               <items>
                 <MenuItem fx:id="speakMenuItem" mnemonicParsing="false" onAction="#speak" text="Speak" />
-                  <MenuItem fx:id="fontMenuItem" mnemonicParsing="false" text="Font" />
+                  <MenuItem fx:id="fontMenuItem" mnemonicParsing="false" text="Font">
+                     <graphic>
+                        <ChoiceBox fx:id="fontChoiceBox" prefWidth="150.0" />
+                     </graphic></MenuItem>
               </items>
             </Menu>
           <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">

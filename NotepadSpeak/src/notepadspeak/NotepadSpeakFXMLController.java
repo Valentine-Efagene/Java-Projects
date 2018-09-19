@@ -5,6 +5,7 @@
  */
 package notepadspeak;
 
+import java.awt.Font;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,10 +19,15 @@ import java.util.Arrays;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
@@ -73,10 +79,22 @@ public class NotepadSpeakFXMLController implements Initializable {
     File file;
     String s = "";
     Speech speech;
+    @FXML
+    private ChoiceBox<String> fontChoiceBox;
      
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         speech = new Speech();
+        ObservableList<String> fontList = FXCollections.<String>observableArrayList(
+                Font.SANS_SERIF);
+        fontChoiceBox = new ChoiceBox<>(fontList);
+        fontChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                textArea.setFont();
+            }
+            
+        });
     }    
 
     @FXML
