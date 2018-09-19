@@ -142,4 +142,13 @@ public class NotepadSpeakFXMLController implements Initializable {
     private void clear(ActionEvent event) {
         textArea.deleteText(0, textArea.getText().length());
     }
+    
+    @FXML
+    private void save(ActionEvent event) {
+        textArea.deleteText(0, textArea.getText().length());
+    }
+
+    @FXML
+    private void saveAs(ActionEvent event) {
+    }
 }
