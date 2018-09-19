@@ -52,7 +52,7 @@ public class NotepadSpeakFXMLController implements Initializable {
     @FXML
     private MenuItem pasteMenuItem;
     @FXML
-    private MenuItem deleteMenuItem;
+    private MenuItem clearMenuItem;
     @FXML
     private Menu formatMenu;
     @FXML
@@ -139,7 +139,7 @@ public class NotepadSpeakFXMLController implements Initializable {
     }
 
     @FXML
-    private void delete(ActionEvent event) {
-        textArea.deleteText(0, textArea.getText().length() - 1);
+    private void clear(ActionEvent event) {
+        textArea.deleteText(0, textArea.getText().length());
     }
 }
