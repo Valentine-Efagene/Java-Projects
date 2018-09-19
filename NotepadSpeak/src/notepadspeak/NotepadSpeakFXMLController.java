@@ -115,7 +115,7 @@ public class NotepadSpeakFXMLController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setTitle("About");
-        alert.setContentText("This is an app to hide files and folders.\n"
+        alert.setContentText("This is a simple notepad app that can speak out text.\n"
                 + "Creator: Valentine Edesiri Efagene (VEE).\n"
                 + "For inquiries and suggestions, you may contact me via\n"
                 + "email: efagenevalentine@gmail.com\n"
