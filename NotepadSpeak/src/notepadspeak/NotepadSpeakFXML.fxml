@@ -21,10 +21,10 @@
           </Menu>
           <Menu fx:id="editMenu" mnemonicParsing="false" text="Edit">
             <items>
-                  <MenuItem fx:id="copyMenuItem" mnemonicParsing="false" text="Copy" />
-                  <MenuItem fx:id="cutMenuItem" mnemonicParsing="false" text="Cut" />
-                  <MenuItem fx:id="pasteMenuItem" mnemonicParsing="false" text="Paste" />
-              <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" text="Delete" />
+                  <MenuItem fx:id="copyMenuItem" mnemonicParsing="false" onAction="#copy" text="Copy" />
+                  <MenuItem fx:id="cutMenuItem" mnemonicParsing="false" onAction="#cut" text="Cut" />
+                  <MenuItem fx:id="pasteMenuItem" mnemonicParsing="false" onAction="#paste" text="Paste" />
+              <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#delete" text="Delete" />
             </items>
           </Menu>
             <Menu fx:id="formatMenu" mnemonicParsing="false" text="Format">

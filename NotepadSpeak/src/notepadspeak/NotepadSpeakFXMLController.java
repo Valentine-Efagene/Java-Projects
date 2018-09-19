@@ -122,4 +122,20 @@ public class NotepadSpeakFXMLController implements Initializable {
         
         alert.show();
     }
+
+    @FXML
+    private void copy(ActionEvent event) {
+    }
+
+    @FXML
+    private void cut(ActionEvent event) {
+    }
+
+    @FXML
+    private void paste(ActionEvent event) {
+    }
+
+    @FXML
+    private void delete(ActionEvent event) {
+    }
 }
