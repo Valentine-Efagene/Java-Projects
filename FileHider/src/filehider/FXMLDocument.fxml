@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="342.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="filehider.FXMLDocumentController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="320.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#closeAction" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutAction" text="About" />
+                  <MenuItem fx:id="usageMenuItem" mnemonicParsing="false" onAction="#usageMenuItemAction" text="Usage" />
+            </items>
+          </Menu>
+            <Menu id="toolsMenu" mnemonicParsing="false" text="Tools">
+              <items>
+                  <RadioMenuItem fx:id="audioRadioMenuItem" mnemonicParsing="false" onAction="#setAudio" text="Audio" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="14.0" layoutY="37.0" text="File/Folder" AnchorPane.leftAnchor="14.0" />
+      <TextField fx:id="fileTextField" layoutX="83.0" layoutY="33.0" onDragDropped="#dragDroppedForFile" onDragOver="#dragOver" prefHeight="25.0" prefWidth="187.0" promptText="Choose file/folder to hide" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="49.0" />
+      <Button fx:id="fileButton" layoutX="277.0" layoutY="33.0" mnemonicParsing="false" onAction="#fileButtonAction" prefHeight="25.0" prefWidth="28.0" text="Button" AnchorPane.rightAnchor="14.0" />
+      <Button fx:id="hideButton" layoutX="14.0" layoutY="72.0" mnemonicParsing="false" onAction="#hideButtonAction" prefHeight="25.0" prefWidth="56.0" text="Hide" AnchorPane.leftAnchor="14.0" />
+      <Button fx:id="unhideButton" layoutX="93.0" layoutY="72.0" mnemonicParsing="false" onAction="#unhideButtonAction" text="Unhide" />
+      <Label layoutX="14.0" layoutY="113.0" text="Where to Save File Location" />
+      <TextField fx:id="saveFileLocationTextField" layoutX="173.0" layoutY="109.0" prefHeight="25.0" prefWidth="318.0" promptText="Choose where to save file location" />
+      <Button fx:id="saveFileLocationButton" layoutX="502.0" layoutY="109.0" mnemonicParsing="false" onAction="#whereToSaveLocationOfHiddenFileButtonAction" prefHeight="25.0" prefWidth="28.0" text="Button" />
+      <Button fx:id="saveButton" layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#saveButtonAction" text="Save" />
+      <Label layoutX="14.0" layoutY="195.0" text="Key" />
+      <Label layoutX="14.0" layoutY="228.0" text="Location of Hide File" />
+      <Button fx:id="retrieveButton" layoutX="11.0" layoutY="259.0" mnemonicParsing="false" onAction="#retrieveLocationButtonAction" text="Retrieve Location" />
+      <TextField fx:id="hideFileLocationTextField" layoutX="152.0" layoutY="224.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="25.0" prefWidth="344.0" promptText="Enter locaiton of place to hide file" />
+      <Label layoutX="10.0" layoutY="300.0" text="Location" />
+      <TextField fx:id="hiddenFileLocationTextField" editable="false" layoutX="87.0" layoutY="296.0" prefHeight="25.0" prefWidth="410.0" />
+      <Button fx:id="hideFileButton" layoutX="500.0" layoutY="224.0" mnemonicParsing="false" onAction="#locationOfHideFileButtonAction" prefHeight="25.0" prefWidth="28.0" text="Button" />
+      <PasswordField fx:id="keyPasswordField" layoutX="65.0" layoutY="191.0" prefHeight="25.0" prefWidth="254.0" promptText="Enter key" />
+   </children>
+</AnchorPane>

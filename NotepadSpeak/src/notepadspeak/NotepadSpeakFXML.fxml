@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="415.0" prefWidth="560.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="notepadspeak.NotepadSpeakFXMLController">
+    <children>
+      <MenuBar prefHeight="25.0" prefWidth="560.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="newMenuItem" mnemonicParsing="false" text="New" />
+                  <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#openFile" text="Open" />
+                  <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" text="Save" />
+                  <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" text="Save As" />
+              <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu fx:id="editMenu" mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem fx:id="copyMenuItem" mnemonicParsing="false" text="Copy" />
+                  <MenuItem fx:id="cutMenuItem" mnemonicParsing="false" text="Cut" />
+                  <MenuItem fx:id="pasteMenuItem" mnemonicParsing="false" text="Paste" />
+              <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+            <Menu fx:id="formatMenu" mnemonicParsing="false" text="Format">
+              <items>
+                <MenuItem fx:id="speakMenuItem" mnemonicParsing="false" onAction="#speak" text="Speak" />
+                  <MenuItem fx:id="fontMenuItem" mnemonicParsing="false" text="Font" />
+              </items>
+            </Menu>
+          <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="textArea" layoutY="22.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="393.0" prefWidth="560.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0" />
+    </children>
+</AnchorPane>
