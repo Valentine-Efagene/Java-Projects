@@ -31,6 +31,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 
@@ -76,25 +77,30 @@ public class NotepadSpeakFXMLController implements Initializable {
     @FXML
     private TextArea textArea;
     
+    int fontSize;
     File file;
     String s = "";
     Speech speech;
     ObservableList<String> fontList;
+    String fontName;
     
     @FXML
     private ChoiceBox<String> fontChoiceBox;
+    @FXML
+    private TextField fontSizeTextField;
      
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //System.out.println(javafx.scene.text.Font.getFamilies().get(0));
+        fontName = "Arial";
+        fontSize = 12;
         speech = new Speech();
         fontList = FXCollections.<String>observableArrayList(Font.getFontNames());
         fontChoiceBox.setItems(fontList);
         fontChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                textArea.setFont(new Font(Font.getFontNames().get((int)newValue), 12));
-                System.out.println(fontList.get((int)newValue));
+                fontName = Font.getFontNames().get((int)newValue);
+                textArea.setFont(new Font(fontName, fontSize));
             }
         });
     }    
@@ -214,5 +220,11 @@ public class NotepadSpeakFXMLController implements Initializable {
     @FXML
     private void exit(ActionEvent event) {
         System.exit(0);
+    }
+
+    @FXML
+    private void changeFontSize(ActionEvent event) {
+        fontSize = new Integer(fontSizeTextField.getText());
+        textArea.setFont(new Font(fontName, fontSize));
     }
 }

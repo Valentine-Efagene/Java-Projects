@@ -30,6 +30,11 @@
             <Menu fx:id="formatMenu" mnemonicParsing="false" text="Format">
               <items>
                 <MenuItem fx:id="speakMenuItem" mnemonicParsing="false" onAction="#speak" text="Speak" />
+                  <MenuItem mnemonicParsing="false" text="Font Size">
+                     <graphic>
+                        <TextField fx:id="fontSizeTextField" onAction="#changeFontSize" />
+                     </graphic>
+                  </MenuItem>
                   <MenuItem fx:id="fontMenuItem" mnemonicParsing="false" text="Font">
                      <graphic>
                         <ChoiceBox fx:id="fontChoiceBox" prefWidth="150.0" />
