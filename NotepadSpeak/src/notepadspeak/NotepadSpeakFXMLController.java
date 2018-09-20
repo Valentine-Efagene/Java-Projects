@@ -86,13 +86,14 @@ public class NotepadSpeakFXMLController implements Initializable {
      
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //System.out.println(javafx.scene.text.Font.getFamilies().get(0));
         speech = new Speech();
-        fontList = FXCollections.<String>observableArrayList("Cooper");
+        fontList = FXCollections.<String>observableArrayList(Font.getFontNames());
         fontChoiceBox.setItems(fontList);
         fontChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                textArea.setFont(new Font(fontList.get((int)newValue), 12));
+                textArea.setFont(new Font(Font.getFontNames().get((int)newValue), 12));
                 System.out.println(fontList.get((int)newValue));
             }
         });

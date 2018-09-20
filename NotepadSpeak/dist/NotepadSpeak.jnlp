@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="NotepadSpeak.jar" size="6559199" download="eager" />
+    <jar href="NotepadSpeak.jar" size="6559270" download="eager" />
     <jar href="lib\cmu_us_kal.jar" size="4899359" download="eager" />
     <jar href="lib\cmulex.jar" size="599429" download="eager" />
     <jar href="lib\en_us.jar" size="866598" download="eager" />
