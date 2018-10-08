@@ -70,4 +70,19 @@ public class CIDR_subnet_converterController implements Initializable {
         
         return count;
     }
+
+    @FXML
+    private void onOctetTFAction(ActionEvent event) {
+        TextField tf = (TextField)event.getSource();
+        int d = 0;
+        try{
+            d = Integer.parseInt(tf.getText());
+        }catch(NumberFormatException nfe){
+            tf.setText(new Integer(0).toString());
+        }
+        
+        if(d > 255) {
+            tf.setText(new Integer(0).toString());
+        }
+    }
 }
