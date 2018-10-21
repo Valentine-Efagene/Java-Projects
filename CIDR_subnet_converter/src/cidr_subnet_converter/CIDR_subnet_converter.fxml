@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="170.0" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="cidr_subnet_converter.CIDR_subnet_converterController">
+<AnchorPane id="AnchorPane" prefHeight="170.0" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cidr_subnet_converter.CIDR_subnet_converterController">
    <children>
       <Label layoutX="14.0" layoutY="35.0" prefHeight="28.0" prefWidth="105.0" text="Subnet Mask">
          <font>
@@ -22,7 +23,7 @@
       </Label>
       <Button fx:id="btn_toPrefixLength" layoutX="14.0" layoutY="131.0" mnemonicParsing="false" onAction="#toPrefixLengthButtonAction" text="To Prefix" />
       <Button fx:id="btn_toSubnet" layoutX="91.0" layoutY="131.0" mnemonicParsing="false" onAction="#toSubnetButtonAction" text="To Subnet" />
-      <TextField fx:id="tf_firstOctet" layoutX="140.0" layoutY="37.0" onAction="#onOctetTFAction" prefHeight="25.0" prefWidth="30.0" text="0">
+      <TextField fx:id="tf_firstOctet" layoutX="140.0" layoutY="37.0" onAction="#onOctetTFAction" prefHeight="25.0" prefWidth="30.0">
          <opaqueInsets>
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </opaqueInsets>
@@ -30,7 +31,7 @@
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </padding>
       </TextField>
-      <TextField fx:id="tf_secondOctet" layoutX="177.0" layoutY="37.0" onAction="#onOctetTFAction" prefHeight="25.0" prefWidth="30.0" text="0">
+      <TextField fx:id="tf_secondOctet" layoutX="177.0" layoutY="37.0" onAction="#onOctetTFAction" prefHeight="25.0" prefWidth="30.0">
          <opaqueInsets>
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </opaqueInsets>
@@ -38,7 +39,7 @@
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </padding>
       </TextField>
-      <TextField fx:id="tf_thirdOctet" layoutX="215.0" layoutY="37.0" onAction="#onOctetTFAction" prefHeight="25.0" prefWidth="30.0" text="0">
+      <TextField fx:id="tf_thirdOctet" layoutX="215.0" layoutY="37.0" onAction="#onOctetTFAction" prefHeight="25.0" prefWidth="30.0">
          <opaqueInsets>
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </opaqueInsets>
@@ -46,7 +47,7 @@
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </padding>
       </TextField>
-      <TextField fx:id="tf_fourthOctet" layoutX="253.0" layoutY="37.0" onAction="#onOctetTFAction" prefHeight="25.0" prefWidth="30.0" text="0">
+      <TextField fx:id="tf_fourthOctet" layoutX="253.0" layoutY="37.0" onAction="#onOctetTFAction" prefHeight="25.0" prefWidth="30.0">
          <opaqueInsets>
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </opaqueInsets>
@@ -54,7 +55,7 @@
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </padding>
       </TextField>
-      <TextField fx:id="tf_prefixLength" layoutX="140.0" layoutY="85.0" prefHeight="25.0" prefWidth="52.0" text="0">
+      <TextField fx:id="tf_prefixLength" layoutX="140.0" layoutY="85.0" prefHeight="25.0" prefWidth="52.0">
          <opaqueInsets>
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </opaqueInsets>
@@ -62,6 +63,11 @@
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </padding>
       </TextField>
+      <Button layoutX="253.0" layoutY="131.0" mnemonicParsing="false" onAction="#aboutButtonAction" text="About">
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </Button>
    </children>
    <opaqueInsets>
       <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
